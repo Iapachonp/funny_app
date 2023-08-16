@@ -1,0 +1,13 @@
+
+services:
+  react_web:
+    build: 
+      dockerfile: ./Dockerfile-dev
+    ports:
+      - "8000:80"
+    environment:
+      FAST_REFRESH: false
+      PORT: 80
+    volumes:
+      - ./:/app
+
