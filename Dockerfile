@@ -9,6 +9,12 @@ RUN npm ci
 # Build the app
 RUN npm run build
 
+
+#DEV 
+FROM builder AS dev  
+
+ENTRYPOINT ["npm","run","start"]
+
 # Bundle static assets with nginx
 FROM nginx:1.21.0-alpine as production
 # ENV NODE_ENV production

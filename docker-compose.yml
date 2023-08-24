@@ -1,13 +1,12 @@
 
 services:
   react_web:
-    build: 
-      dockerfile: ./Dockerfile-dev
+    image: webcoffee_app:0.0.1   
     ports:
       - "8000:80"
     environment:
       FAST_REFRESH: false
       PORT: 80
     volumes:
-      - ./:/app
+      - ./src:/app/src
 
